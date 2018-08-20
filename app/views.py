@@ -1,7 +1,20 @@
 from app import app
 from flask import render_template
+from flask_nav import Nav
+from flask_nav.elements import *
 
-
+# nav = Nav()
+# nav.register_element('top',Navbar(u'Flask入门',
+#                                   View(u'主页', 'index.html')
+#                                   # ,
+#                                   # View(u'关于','about'),
+#                                   # Subgroup(u'项目',
+#                                   #          View(u'项目一','about'),
+#                                   #          Separator(),
+#                                   #          View(u'项目二','service')
+#                                   #          )
+# ))
+# nav.init_app(app)
 @app.route('/')
 @app.route('/index')
 def index():

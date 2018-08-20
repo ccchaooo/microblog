@@ -1,7 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>hello,{{ user.nickname }}!</h1>
-{% for post in posts %}
-   <div><p>{{ post.author.nickname }}say:{{ post.body }}</p></div>
+{#{% for post in posts %}#}
+{#   <div><p>{{ post.author.nickname }}say:{{ post.body }}</p></div>#}
+{#{% endfor %}#}
+<div>
+<table border="1" style="align-self: center" >
+<tr>
+    <th>房间号</th>
+    <th>月份</th>
+    <th>总收入</th>
+</tr>
+{% for record in records %}
+    <tr>
+    {% for iteam in record %}
+        <td {% if iteam.text == "总收入" %} {{ 'style="align-self: left"' }}
+            {% endif %}
+            >{{ iteam.value }}
+            {% if iteam.text == "总收入" %}
+                {{ "(元) " }}
+            {% endif %}
+        </td>
+    {% endfor %}
+    </tr>
 {% endfor %}
+</tr>
+</table>
+</div>
+
 {% endblock %}
